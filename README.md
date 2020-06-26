@@ -14,4 +14,7 @@ Complementary Data:
 
 ## 2. Brief Analysis of Data
 
+Before building an interactive dashboard to map us-hate crimes and hate groups towards immigrant communities, we developed a brief analysis of the data, particularly focusing on Latin and Hispanic communities. 
+The overall analysis is in [report.pdf](report.pdf)
+
 ## 3. Building Dashboard Framework
