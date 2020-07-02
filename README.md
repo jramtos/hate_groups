@@ -12,7 +12,7 @@ Complementary Data:
 * US Census Bureau API: we used [American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs/technical-documentation/summary-file-documentation.html). 
     The following demographics were downloaded:  
     * Population estimates of US States from the American Community Survey 5 Year Estimates and 1 Year Estimates. 
-    * 1 Year Estimates are stores in population.csv from [US Census Bureau](https://www2.census.gov/programs-surveys/popest/tables/2010-2019/state/totals/)
+    * 1 Year Estimates are stored in population.csv from [US Census Bureau](https://www2.census.gov/programs-surveys/popest/tables/2010-2019/state/totals/)
     * Median Income, Foreign Born Population, Mexican Born Population, and Latin American born Population
     5 year estimates obtained from the American Community Survey.
     
