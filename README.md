@@ -29,3 +29,10 @@ Before building an interactive dashboard to map us-hate crimes and hate groups t
 The overall analysis is in [report.pdf](report.pdf) and the code is in [analysis_hate_data.ipynb](analysis_hate_data.ipynb)
 
 ## 3. Building Dashboard Framework
+
+### Simple Interactive Dashboard using Shiny
+Shiny is an R package to build interactive web apps straight from R where one can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. 
+As a simple way to build a useful dashboard, we will rely on Shiny.
+There are two parts of the code: 
+1. a file that structures the data and builds a function to map Hate groups and crimes ([handle_data.R](handle_data.R)) 
+2. a file that builds the app ([build_app.R](build_app.R))

@@ -5,9 +5,8 @@ library(rgdal)
 library(dplyr)
 library(colorspace)
 library(htmltools)
-library(stringr)
-library(stringi)
 library(tidyverse)
+
 ## Download Shapes and Data ##
 shapes <- readOGR( "data/shapes/tl_2017_us_state.shp")
 hg <-read.csv('data/splc-hate-groups.csv')
@@ -26,7 +25,7 @@ only_immigrant = filter(hg, hg['Ideology'] == 'Anti-Immigrant') %>%
 hg_counts = merge(all_hg, only_immigrant, by=c('State', 'Year'), all=TRUE)
 
 #Include population estimates
-hg_counts = merge(hg_counts, pop, by=c('State', 'Year'), all=TRUE)
+hg_counts = merge(filter(hg_counts, hg_counts$Year > 2009), pop, by=c('State', 'Year'), all=TRUE)
 
 #Normalize number of hate groups per million people
 hg_counts$count_hg[is.na(hg_counts$count_hg)] <- 0
@@ -39,14 +38,15 @@ all_states = tibble(unique(hg_counts$State))
 colnames(all_states) <-c('State')
 
 ## Merge with Hate Crimes Data ##
-colnames(agg_hc)
 hdata = merge(hg_counts, agg_hc, by=c('State', 'Year'), all=TRUE)
 hdata$race[is.na(hdata$race)] <- 0#Replace NA with 0
 hdata$latino[is.na(hdata$latino)] <- 0
 hdata['race_n'] = hdata$race / hdata$population * 1000000
 hdata['latino_n'] = hdata$latino / hdata$population * 1000000
 
-## Melt Data
+## Melt and Merge Functions ##
+melted = melt(hdata, id.vars = c('State', 'Year'), measure.vars=colnames(hdata)[3:11])
+
 
 ## Merge all aggregated data with Shapes ##
 select_year = 2016
