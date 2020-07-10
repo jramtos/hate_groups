@@ -34,8 +34,8 @@ The overall analysis is in [report.pdf](report.pdf) and the code is in [analysis
 Shiny is an R package to build interactive web apps straight from R where one can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. 
 As a simple way to build a useful dashboard, we will rely on Shiny.
 There are two parts of the code: 
-1. [aggregate_data.py](aggregate_data.py): A file that aggregates the data and stores it in csv files
-Run in the terminal: ```python3 aggregate_data.py``` to download the data.
+1. [aggregate_data.py](aggregate_data.py): A file that aggregates the data and stores it in csv files.  
+Run: ```python3 aggregate_data.py``` to download the data.
 2. [app.R](app.R): A file that builds the app (UI and Server) using R and Shiny.
 
 You can check the interactive dashboard [here](https://jramtos.shinyapps.io/hate_groups/)
