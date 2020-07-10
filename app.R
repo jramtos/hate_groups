@@ -1,10 +1,15 @@
+library(leaflet)
+library(rgdal)
+library(dplyr)
+library(colorspace)
+library(htmltools)
+library(tidyverse)
+library(shiny)
 agg_hg<-read_csv('data/agg_hg.csv')
 agg_hc<-read_csv('data/agg_hc.csv')
 shapes<-readOGR( "data/shapes/tl_2017_us_state.shp")
+
 ##Build App ##
-
-library(shiny)
-
 ## USER INTERFACE ###
 top=140
 left=20
