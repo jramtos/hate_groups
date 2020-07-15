@@ -43,7 +43,7 @@ def aggregate_hategroups():
     groups['Other'] = groups[other_ideologies].sum(axis=1)
     groups.drop(columns=other_ideologies, inplace=True)
     groups=groups[groups.Year > 2009]
-    groups = groups.merge(pop, on=['State', 'Year'], how='left')
+    groups = groups.merge(pop, on=['State', 'Year'], how='right')
 
     groups=groups[groups.State != 'District of Columbia']
 
@@ -75,9 +75,9 @@ def aggregate_hatecrimes():
     groups_hc[race_categories] = groups_hc[race_categories].fillna(0)
     groups_hc['other'] = groups_hc[['white', 'race']].sum(axis=1)
     groups_hc.rename(columns={'STATE_NAME': 'State', 'DATA_YEAR': 'Year'}, inplace=True)
-    groups_hc = groups_hc[groups_hc.Year > 2009].merge(pop, on=['State', 'Year'], how='left')
+    groups_hc = groups_hc[groups_hc.Year > 2009].merge(pop, on=['State', 'Year'], how='right')
     groups_hc=groups_hc[groups_hc.State != 'District of Columbia']
-    groups_hc[race_categories] = groups_hc[race_categories].fillna(0)
+    groups_hc[race_categories + ['other']] = groups_hc[race_categories + ['other']].fillna(0)
     groups_hc.drop(columns=['white', 'race'], inplace=True)
     for col in race_categories[:-2]+['other']:
         groups_hc[col]= (groups_hc[col]/groups_hc['population']*1000000).apply(round, ndigits=2)
