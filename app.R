@@ -47,7 +47,7 @@ ui <- navbarPage(title="Anti-immigration sentiment through hate data",
                           leafletOutput("map_g", width='1300', height='600'), 
                           hategroups_choices
                           ),
-                 tabPanel(title='Hate Crimes', value='tab2',
+                 tabPanel(title='Hate Crimes',
                           absolutePanel(style = "opacity: 0.65; z-index: 10;",fixed=T,
                              top=top, left=left, right='auto', bottom = 'auto',
                              width = 600, height = 30,
@@ -96,7 +96,6 @@ server <- function(input, output, session) {
   
   #Interactive Update
   observe({
-    
     #Update for Hate Groups Map
       leafletProxy("map_g", data = fgdata()) %>%
         addTiles() %>% 
@@ -131,10 +130,10 @@ server <- function(input, output, session) {
                                               textsize = "8px", direction = "auto"))
   })
   
-   observeEvent(input$category, 
-                {print(input$category)})
-   observeEvent(input$bias, 
-                {print(input$bias)})
+  #  observeEvent(input$category, 
+  #               {print(input$category)})
+  #  observeEvent(input$bias, 
+  #               {print(input$bias)})
 }
 
 shinyApp(ui, server)

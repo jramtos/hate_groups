@@ -23,10 +23,9 @@ Complementary Data:
 
 * [shapes](/data/shapes): folder with the geometries of US States and Territories.
 
-## 2. Brief Analysis of Data
+## 2. Analysis of Data
 
-Before building an interactive dashboard to map us-hate crimes and hate groups towards immigrant communities, we developed a brief analysis of the data, particularly focusing on Latin and Hispanic communities. 
-The overall analysis is in [report.pdf](report.pdf) and the code is in [analysis_hate_data.ipynb](analysis_hate_data.ipynb)
+The analysis of the data, literature review and observed facts about hate towards immigrant communities (particularly Hispanic communities) are compiled in [report.pdf](report.pdf) and the code is in [analysis_hate_data.ipynb](analysis_hate_data.ipynb).
 
 ## 3. Building Dashboard Framework
 
