@@ -25,7 +25,7 @@ Complementary Data:
 
 ## 2. Analysis of Data
 
-The analysis of the data, literature review and observed facts about hate towards immigrant communities (particularly Hispanic communities) are compiled in [report.pdf](report.pdf) and the code is in [analysis_hate_data.ipynb](analysis_hate_data.ipynb).
+The analysis of the data, literature review and observed facts about hate towards immigrant communities (particularly Hispanic communities) are compiled in this [report](Identifying_Anti-immigration_movements.pdf) and the code is in [analysis_hate_data.ipynb](analysis_hate_data.ipynb).
 
 ## 3. Building Dashboard Framework
 
